@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { Provider } from "./lib/shared/helpers/userContext";
+import { GeneralContainer } from "./lib/components/organism/GeneralContainer/GeneralContainer";
+import { ItemList } from "./lib/components/organism/ItemList/ItemList";
+import { ProductCard } from "./lib/components/molecule/ProductCard";
+import { productService } from "./lib/services";
+import { Product } from "./lib/models/ShopModel";
 
 function App() {
+  const [state, setstate] = useState<Product[]>([]);
+
+  useEffect(() => {
+    productService.getProductList().then((value) => setstate(value));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider value={null}>
+      <GeneralContainer>
+        <>
+          <ItemList
+            product={state}
+            format="grid"
+            renderItem={(item, index) => (
+              <ProductCard key={index.toString()} product={item} />
+            )}
+          />
+        </>
+      </GeneralContainer>
+    </Provider>
   );
 }
-
 export default App;
