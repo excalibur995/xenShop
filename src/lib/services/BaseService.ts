@@ -13,7 +13,7 @@ export default class BaseService {
   }
 
   mutateProductDetail(id: string) {
-    const paramsIdentifier = this.product_detail_api.substring(this.product_detail_api.indexOf(":") + 1,
+    const paramsIdentifier = this.product_detail_api.substring(this.product_detail_api.indexOf(":"),
       this.product_detail_api.length)
     return this.product_detail_api.replace(paramsIdentifier, id);
   }

@@ -1,4 +1,4 @@
-import { ListFormat } from "../../../models/GenericModel";
+import { ListFormat, LoadingStyle } from "../../../models/GenericModel";
 
 export interface ListProductConfig<ProductType> {
 	/**
@@ -8,6 +8,21 @@ export interface ListProductConfig<ProductType> {
 	 *
 	 */
 	format?: ListFormat;
+	/**
+	 *
+	 * @description flag that indicates that list being loading 
+	 * @default false
+	 *
+	 */
+	loading?: boolean;
+	/**
+	 *
+	 * @description style of product loading card
+	 * @interface LoadingStyle
+	 * @kind "product" | "cart" | "product-detail"
+	 *
+		*/
+	loadingStyle?: LoadingStyle
 	/**
 	 *
 	 * @description product that need to map
