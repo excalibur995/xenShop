@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import ThemeConsume from "../../atom/Theme";
+import Header from "../../molecule/Header/Header";
 import { GeneralTemplate } from "./GeneralContainerTypes";
 
 export const GeneralContainer = (props: GeneralTemplate) => {
   return (
     <ThemeConsume>
+      <Header isActive={props.isActive} />
       <Container>
         <ContentContainer>
           <>{props.children}</>
