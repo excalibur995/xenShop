@@ -7,4 +7,12 @@ export interface HeaderTypes {
    * @default false
    */
   isActive?: boolean
+  /**
+  *
+  * @description flag that indicates that cart shoudl be hide or not
+  * or not
+  * 
+  * @default false
+  */
+  hideCart?: boolean
 }

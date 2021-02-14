@@ -1,4 +1,5 @@
 import { BaseConfig } from "../models/GenericModel"
+import CartService from "./CartService";
 import ProductService from "./ProductService"
 
 const apiConfig: BaseConfig = {
@@ -8,3 +9,4 @@ const apiConfig: BaseConfig = {
 }
 
 export const productService = new ProductService(apiConfig);
+export const cartService = new CartService();

@@ -6,6 +6,10 @@ export interface BaseConfig {
   product_detail_api: string;
 }
 
+
+export type GeneralHandleClick<handleClickTypeReturn> = (
+  e: React.MouseEvent<HTMLDivElement, MouseEvent>
+) => handleClickTypeReturn;
 export type Elevation = "thin" | "interactive" | "float" | "thicker";
 export type Border = "flat" | "rounded"
 export type ListFormat = "list" | "grid";

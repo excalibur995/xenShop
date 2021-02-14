@@ -1,31 +1,49 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useCallback, Dispatch } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Product } from "../models/ShopModel";
-import { productService } from "../services";
 import { useHistory } from "react-router-dom";
 import { ProductCard } from "../components/molecule/ProductCard/ProductCard";
 import { ItemList } from "../components/organism/ItemList/ItemList";
 import { GeneralContainer } from "../components/organism/GeneralContainer/GeneralContainer";
+import {
+  fetchProducts,
+  populateProductDetail,
+} from "../shared/store/Product/actions";
+import { ProductListState } from "../shared/store/Product/types";
+import { RootState } from "../shared/store/rootStore";
 
 export default function ProductListPage() {
-  const [state, setstate] = useState<Product[]>([]);
-  const [loading, setloading] = useState<boolean>(true);
-  const history = useHistory();
+  // Selector
+  const { isLoad, products } = useSelector(
+    (state: RootState) => state.productReducer
+  ) as ProductListState;
 
-  const handleCardClick = (item: Product) =>
+  const dispatch: Dispatch<any> = useDispatch();
+  const history = useHistory();
+  const getAllProducts = useCallback(() => dispatch(fetchProducts()), [
+    dispatch,
+  ]);
+  const getProduct = useCallback(
+    (product: Product) => dispatch(populateProductDetail(product)),
+    [dispatch]
+  );
+
+  const handleCardClick = (item: Product) => {
     history.push(`/details/${item.id}`);
+    getProduct(item);
+  };
 
   useEffect(() => {
-    productService
-      .getProductList()
-      .then((value) => setstate(value))
-      .finally(() => setloading(false));
-  }, []);
+    if (products.length < 1) {
+      getAllProducts();
+    }
+  }, [products, getAllProducts]);
 
   return (
     <GeneralContainer>
       <ItemList
-        loading={loading}
-        product={state}
+        loading={isLoad}
+        product={products}
         format="grid"
         renderItem={(item, index) => (
           <ProductCard

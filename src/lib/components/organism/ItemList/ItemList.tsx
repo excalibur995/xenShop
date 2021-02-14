@@ -73,6 +73,7 @@ export const ItemList = <T extends any>(products: ListProductConfig<T>) => {
 const ListContainer = styled.div`
   display: flex;
   flex-flow: column;
+  margin: 5px;
 `;
 
 const GridContainer = styled.div`
