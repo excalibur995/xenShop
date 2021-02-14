@@ -13,4 +13,20 @@ export interface GeneralTemplate {
 	 * @default false
 	 */
 	isActive?: boolean
+	/**
+	 *
+	 * @description flag that indicates that this page have bottom bar
+	 * or not
+	 * 
+	 * @default false
+	 */
+	haveBottomBar?: boolean
+	/**
+*
+* @description flag that indicates that cart shoudl be hide or not
+* or not
+* 
+* @default false
+*/
+	hideCart?: boolean
 }

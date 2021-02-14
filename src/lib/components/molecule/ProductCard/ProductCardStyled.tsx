@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ItemContainer = styled.div`
   display: flex;
   flex-flow: column;
-  max-width: 200px;
+  max-width: 180px;
 `;
 
 export const ImageContainer = styled.div`

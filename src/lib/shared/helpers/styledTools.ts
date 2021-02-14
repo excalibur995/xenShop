@@ -7,7 +7,7 @@ export const AppsTheme: Theme = {
   colors: {
     colorPrimary: "#eee",
     colorSecondary: "#ffdab9",
-    colorDefault: "#d8e7fd",
+    colorDefault: "#fff",
     colorDestructive: "#ff2424",
   },
   breakpoints: {

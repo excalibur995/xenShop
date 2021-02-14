@@ -18,6 +18,5 @@ const Chevron = styled.div`
 
 export default function BackButton() {
   const history = useHistory();
-  const handleHistory = () => history.goBack();
-  return <Chevron onClick={handleHistory} />;
+  return <Chevron onClick={() => history.goBack()} />;
 }

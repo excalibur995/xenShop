@@ -20,24 +20,3 @@ export const HeaderContent = styled.div`
   padding: 0 18px;
   box-sizing: border-box;
 `;
-
-export const LogoHeader = styled.img`
-  max-width: 36px;
-  max-height: 36x;
-  object-fit: content;
-`;
-
-export const NotificationContainer = styled.div`
-  position: relative;
-`;
-
-export const Badge = styled.div`
-  position: absolute;
-  top: 13px;
-  right: -5px;
-  padding: 4px 8px;
-  border-radius: 50%;
-  background: red;
-  color: white;
-  font-size: 14px;
-`;
