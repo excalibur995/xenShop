@@ -49,7 +49,7 @@ export default function DetailPage(props: DetaiPageProps) {
       </ImageContainer>
       <DetailDescContainer>
         <h1>{props.product?.title}</h1>
-        <PriceText>{props.product?.price}</PriceText>
+        <PriceText>{Math.ceil(props.product?.price ?? 0)}</PriceText>
         <p>{props.product?.description}</p>
         {isExist() ? (
           <CounterButton value={props.product} />

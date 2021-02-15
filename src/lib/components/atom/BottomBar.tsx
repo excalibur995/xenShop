@@ -9,8 +9,8 @@ export default function BottomBar(props: BottomBarProps) {
   return <BottomBarComponent>{props.children}</BottomBarComponent>;
 }
 
-const BottomBarComponent = styled.div`
-  background-color: ${(props) => props.theme.colors.colorDefault};
+const BottomBarComponent = styled.div<BottomBarProps>`
+  background-color: ${(props) => props.theme.colors.colorPrimary};
   height: 56px;
   width: 100%;
   z-index: 99;

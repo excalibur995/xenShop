@@ -5,10 +5,13 @@ import { Theme } from "../../models/ThemeModel";
 
 export const AppsTheme: Theme = {
   colors: {
-    colorPrimary: "#eee",
-    colorSecondary: "#ffdab9",
-    colorDefault: "#fff",
+    colorPrimary: "#ffdab9",
+    colorAction: "indigo",
+    colorBackground: "#fff",
     colorDestructive: "#ff2424",
+    colorBackgroundSecondary: "#ffdab9",
+    colorTextPrimary: "#000",
+    colorTextSecondary: "#eee"
   },
   breakpoints: {
     desktop: "1024px",

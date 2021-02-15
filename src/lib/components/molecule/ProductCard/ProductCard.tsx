@@ -49,7 +49,7 @@ export const ProductCard = <T extends unknown>(props: ItemCardProps<T>) => {
       </Card>
       <DetailContainer>
         <ProductTitle>{props.product.title}</ProductTitle>
-        <PriceText>{props.product.price}</PriceText>
+        <PriceText>{Math.ceil(props.product.price)}</PriceText>
         {isExist() ? (
           <CounterButton value={props.product} />
         ) : (

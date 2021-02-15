@@ -31,12 +31,14 @@ const SkeletonAnimation = styled.div`
 interface SkeletonProps {
   height?: string;
   width?: string;
+  style?: CSSProperties;
 }
 
 export default function SkeletonLoader(props: SkeletonProps): JSX.Element {
   const iniLineStyle: CSSProperties = {
     height: props?.height ?? "100px",
     width: props?.width ?? "100px",
+    ...props.style,
   };
 
   return (

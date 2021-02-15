@@ -46,7 +46,7 @@ export const ItemList = <T extends any>(products: ListProductConfig<T>) => {
       <>
         {container(
           products.format,
-          [1, 2, 3, 4, 5, 6].map((value) =>
+          [1, 2, 3, 4, 5, 6, 7, 8].map((value) =>
             loadingStyle(products.loadingStyle, value.toString())
           )
         )}

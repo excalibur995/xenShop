@@ -1,5 +1,5 @@
 import React from "react";
-import { Cart } from "../../../models/ShopModel";
+import { Cart, CheckoutItem } from "../../../models/ShopModel";
 import { cartService } from "../../../services";
 import BottomBar from "../../atom/BottomBar";
 import XenButton from "../../atom/XenButton";
@@ -12,6 +12,18 @@ interface CheckoutBarProps {
 }
 
 export default function CheckOutBar(props: CheckoutBarProps) {
+  const handlePay = async () => {
+    const payload: CheckoutItem = {
+      amount: cartService.totalPrice(props.cart),
+      description: "",
+      payerEmail: "",
+    };
+
+    if (props.cart.products.length) {
+      console.log(payload);
+    }
+  };
+
   return (
     <BottomBar>
       <CheckoutBarContainer>
@@ -19,7 +31,7 @@ export default function CheckOutBar(props: CheckoutBarProps) {
           <PriceText>{cartService.totalPrice(props.cart)}</PriceText>
         </Centered>
         <Centered>
-          <XenButton style={{ background: "red" }}>Checkout</XenButton>
+          <XenButton handleClick={handlePay}>Checkout</XenButton>
         </Centered>
       </CheckoutBarContainer>
     </BottomBar>

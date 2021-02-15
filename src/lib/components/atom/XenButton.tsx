@@ -25,7 +25,7 @@ const PayButton = styled.div`
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #000;
+  background-color: ${(props) => props.theme.colors.colorAction};
   text-align: center;
   cursor: pointer;
   width: 100%;

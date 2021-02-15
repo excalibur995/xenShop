@@ -48,12 +48,14 @@ export const ProductTitle = styled.h3`
   text-align: left;
   margin: 0;
   font-size: calc(10px + 1vmin);
+  color: ${(props) => props.theme.colors.colorTextPrimary};
 `;
 
 export const PriceText = styled.p`
   margin: 10px 0;
   font-weight: 600;
   text-align: left;
+  color: ${(props) => props.theme.colors.colorTextPrimary};
   &:before {
     content: "$";
   }
