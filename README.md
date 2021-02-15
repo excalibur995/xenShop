@@ -2,7 +2,7 @@
 
 ## Available Scripts
 
-In the project directory, you can run:
+before run please run `yarn` or `npm install` to download the `node_modules`
 
 ### `yarn start`
 
@@ -71,3 +71,12 @@ export const AppsTheme: Theme = {
   }
 }
 ```
+
+### Challange
+- Make the component as generic and reusable as possible
+- Use react after using vue for daily drive
+
+### Next
+ - Add user authentication
+ - add categories for products
+ - add search for products
