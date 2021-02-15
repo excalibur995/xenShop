@@ -4,6 +4,11 @@ import ThemeConsume from "../../atom/Theme";
 import Header from "../../molecule/Header/Header";
 import { GeneralTemplate } from "./GeneralContainerTypes";
 
+/**
+ *
+ * @description use it for every page container
+ *
+ */
 export const GeneralContainer = (props: GeneralTemplate) => {
   return (
     <ThemeConsume>
@@ -18,13 +23,13 @@ export const GeneralContainer = (props: GeneralTemplate) => {
 };
 const Container = styled.div<GeneralTemplate>`
   position: relative;
-  padding: 49px 0px ${(props) => (props.haveBottomBar ? "66px" : "10px")};
+  padding: 49px 0px ${(props) => (props.haveBottomBar ? "66px" : "0px")};
   width: 100%;
   min-height: ${(props) =>
     props.haveBottomBar ? "calc(100vh - 56px - 52px)" : "calc(100vh - 56px)"};
   left: 0;
   transition: left 0.5s;
-  background: ${(props) => props.theme.colors.colorPrimary};
+  background: ${(props) => props.theme.colors.colorBackground};
 `;
 
 const ContentContainer = styled.section`

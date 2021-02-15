@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
   top: 0;
   left: 0;
   position: fixed;
-  background: ${(props) => props.theme.colors.colorSecondary};
+  background: ${(props) => props.theme.colors.colorPrimary};
 `;
 
 export const HeaderContent = styled.div`

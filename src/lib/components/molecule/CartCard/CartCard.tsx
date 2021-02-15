@@ -26,7 +26,9 @@ export default function CartCard(props: CartListProps) {
       </Centered>
       <DetailCartontainer>
         <h3>{props.value.title}</h3>
-        <PriceText>{props.value.price * props.value.quantity}</PriceText>
+        <PriceText>
+          {Math.ceil(props.value.price) * props.value.quantity}
+        </PriceText>
         <CounterButton value={props.value} />
       </DetailCartontainer>
     </CartCardContainer>

@@ -2,8 +2,20 @@ import { BaseConfig } from "../models/GenericModel";
 
 
 export default class BaseService {
+  /**
+   * @description your base api
+   * @example "https://fakestoreapi.com"
+    **/
   base_api: string;
+  /**
+   * @description your product api
+   * @example "/products"
+    **/
   list_product_api: string;
+  /**
+  * @description your product detail api
+  * @example "/products/:id"
+   **/
   product_detail_api: string;
 
   constructor(config: BaseConfig) {

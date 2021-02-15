@@ -24,11 +24,11 @@ export const Badge = styled.div`
   min-height: 10px;
   line-height: 10px;
   padding: 5px;
-  color: #fff;
-  background-color: #bf1f1f;
+  color: ${(props) => props.theme.colors.colorTextSecondary};
+  background-color: ${(props) => props.theme.colors.colorDestructive};
   font-size: 10px;
   border-radius: 20px;
-  border: solid 1px #c93a3a;
+  border: solid 1px ${(props) => props.theme.colors.colorDestructive};
 `;
 
 export default function NotificationBadge() {

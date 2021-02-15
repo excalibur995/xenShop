@@ -16,6 +16,18 @@ export function fetchProducts() {
   }
 }
 
+
+export function fetchSingleProduct(id: string) {
+  return async (dispatch: (arg: ProductListActions<boolean | Product>) => ProductListActions<boolean | Product>) => {
+    dispatch(toggleLoadingId(true));
+    return productService
+      .getProductDetail(id)
+      .then((value) => dispatch(populateProductDetail(value)))
+      .catch(() => dispatch(populateProductDetail(productService.defaultValue)))
+      .finally(() => dispatch(toggleLoadingId(false)));
+  }
+}
+
 export function populateProductDetail(detail: Product): ProductListActions<Product> {
   return {
     type: "POPULATE_DETAIL_PRODUCT",

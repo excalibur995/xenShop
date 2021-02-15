@@ -1,3 +1,12 @@
+/**
+ *
+ * @description GeneralTemplate property
+ * @param children: React.ReactNode;
+ * @param isActive: boolean;
+ * @param haveBottomBar: boolean;
+ * @param hideCart: boolean
+ *
+ */
 export interface GeneralTemplate {
 	/**
 	 *

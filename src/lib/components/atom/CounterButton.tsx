@@ -9,6 +9,7 @@ import { CartListState } from "../../shared/store/Cart/types";
 import { RootState } from "../../shared/store/rootStore";
 import { useDispatch, useSelector } from "react-redux";
 import { cartService } from "../../services";
+import { CounterType } from "../../models/GenericModel";
 
 interface CounterProps {
   value: Product | null;
@@ -30,19 +31,14 @@ export default function CounterButton(props: CounterProps) {
 
   const handleClick = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    type: "decrement" | "increment"
+    type: CounterType
   ) => {
     e.stopPropagation();
     if (props.value) {
       if (type === "increment") {
-        addToCart(props.value);
-        console.log(type, JSON.stringify(cart, null, undefined));
-        return;
+        return addToCart(props.value);
       }
-
-      removeProduct(props.value);
-      console.log(type, JSON.stringify(cart, null, undefined));
-      return;
+      return removeProduct(props.value);
     }
   };
 
@@ -78,7 +74,7 @@ const ButtonCirlce = styled.div`
   width: 30px;
   height: 30px;
 
-  background: #000;
+  background-color: ${(props) => props.theme.colors.colorAction};
   text-align: center;
   border-radius: 50%;
 `;
